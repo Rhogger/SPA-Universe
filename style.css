@@ -5,5 +5,116 @@
 }
 
 :root {
+  font-size: 6.25%;
   font-family: "Roboto", sans-serif;
+
+  --item-hover: hsl(0, 0%, 100%);
+  --item-not-hover: hsl(240, 7%, 78%);
+  --text: hsl(240, 9%, 89%);
+  --button: hsl(0, 0%, 100%);
+  --button-hover: hsl(194, 97%, 31%);
+}
+
+body {
+  height: 100vh;
+
+  background-image: url(src/assets/images/mountains-universe-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: grid;
+  /* grid-template-areas:
+    "header"
+    "main"
+  ; */
+  grid-template-rows: max-content 1fr;
+}
+
+header {
+  padding: 40rem 72rem;
+
+  /* max-height: 122rem; */
+
+  /* grid-area: header; */
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32rem;
+
+  list-style: none;
+}
+
+header nav ul li,
+header nav ul li a {
+  font-size: 24rem;
+  color: var(--item-not-hover);
+  text-decoration: none;
+
+  line-height: 21.7%;
+}
+
+header nav ul li a:hover {
+  color: var(--item-hover);
+
+  transition: all .3s;
+}
+
+main {
+  padding: 64rem 102rem;
+}
+
+h1 {
+  font-size: 48rem;
+  color: var(--text);
+  line-height: 125%;
+}
+
+p {
+  font-size: 18rem;
+  line-height: 160%;
+  color: var(--text);
+
+  max-width: 648rem;
+}
+
+section#home {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24rem;
+}
+
+section#home button {
+  font-size: 14rem;
+  font-weight: 700;
+  line-height: 24rem;
+  color: var(--button);
+
+  background-color: transparent;
+
+  padding: 12rem 32rem;
+  border: 2px solid var(--button);
+  border-radius: 5rem;
+
+  cursor: pointer;
+}
+
+section#home button:hover {
+  color: var(--button-hover);
+  background-color: var(--button);
+
+  transition: all .6s;
+}
+
+section#universe,
+section#exploration {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
 }
