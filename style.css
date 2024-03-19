@@ -80,7 +80,8 @@ p {
   max-width: 648rem;
 }
 
-section#home {
+section#home,
+section#error-404 {
   height: 100%;
 
   display: flex;

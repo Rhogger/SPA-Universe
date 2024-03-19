@@ -1,5 +1,6 @@
 class Router {
   routes = {}
+  // actualRoute = 
 
   add(routeName, page) {
     this.routes[routeName] = page
@@ -17,18 +18,12 @@ class Router {
   handle() {
     const { pathname } = window.location
 
-    console.log(pathname);
-
-    const route = this.routes[pathname] || this.routes['error-404']
-
-    console.log(route);
+    const route = this.routes[pathname] || this.routes['/error-404']
 
     fetch(route)
       .then(data => data.text())
       .then(html => {
         document.querySelector('main').innerHTML = html
-
-        console.log(html);
       })
   }
 }
