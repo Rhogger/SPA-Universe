@@ -1,6 +1,5 @@
 class Router {
   routes = {}
-  // actualRoute = 
 
   add(routeName, page) {
     this.routes[routeName] = page
@@ -10,9 +9,13 @@ class Router {
     event = event || window.event
     event.preventDefault()
 
-    window.history.pushState({}, "", event.target.href)
+    const target = event.target || event.srcElement
+    const href = target.href
 
-    this.handle()
+    if (href !== window.location.href) {
+      window.history.pushState({}, "", event.target.href)
+      this.handle()
+    }
   }
 
   handle() {
